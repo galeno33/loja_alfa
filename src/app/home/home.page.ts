@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { ProviderService} from '../provider/provider.service';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+  produtos: any;
+
+  constructor(
+             public http: HttpClient,
+             public Urlserve: ProviderService
+  ){
+    this.listprodutos();
+  }
+
+  listprodutos(){
+    this.http.get(this.Urlserve.getUrl()+"dados.php").pipe(map(res => res))
+    .subscribe(
+        listdado =>{
+          this.produtos = listdado;
+        }
+    );
+  }
+
+}
