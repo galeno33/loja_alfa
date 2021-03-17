@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -7,14 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+    Login: string;
+    password: string;
+
+  constructor(
+              public alert: AlertController
+  ) { }
 
   ngOnInit() {
+
+
+
   }
 
 
-  entra(){
+  async entrar(){
+    if(this.Login == undefined || this.password == undefined){
 
+       const alert = await this.alert.create({
+          header: 'Atenção',
+          message: 'Preencha todos os campos!!',
+          buttons: ['OK']
+        });
+        await alert.present();
+
+
+
+    }else{
+
+    }
   }
 
 }
