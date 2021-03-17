@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+
+import { ProviderService } from '../provider/provider.service';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,7 +17,10 @@ export class LoginPage implements OnInit {
     password: string;
 
   constructor(
-              public alert: AlertController
+              public alert: AlertController,
+              public url: ProviderService,
+              public http: HttpClient,
+              public nav: NavController
   ) { }
 
   ngOnInit() {
@@ -33,9 +40,20 @@ export class LoginPage implements OnInit {
         });
         await alert.present();
 
-
-
     }else{
+
+      this.http.get(this.url.getUrl()+ "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res:any) => res))
+      .subscribe(
+
+        data => {
+
+          if(data.msg.logado == "sim"){
+              this.nav.navigateBack('home');
+          }else{
+
+          }
+        }
+      )
 
     }
   }

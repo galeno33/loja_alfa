@@ -1,25 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      <strong>AppLoja</strong>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            <strong>AppLoja</strong>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card *ngFor="let produto of produtos">
+    <ion-card *ngFor="let produto of produtos">
 
-    <ion-img src="../../assets/img/roupaFeminino.jpg"></ion-img>
-    <ion-card-content>
-    <ion-card-header>
-      <ion-card-subtitle><h1>{{produto.nome}}</h1></ion-card-subtitle>
-      <h2>{{produto.detalhes}}</h2>
-      <ion-card-title>R${{produto.preco}}</ion-card-title>
-    </ion-card-header>
-  </ion-card-content>
-  <ion-button buttton expand="full">CLIQUE</ion-button>
-  </ion-card>
+        <ion-img src="../../assets/img/roupaFeminino.jpg"></ion-img>
+        <ion-card-content>
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <h1>{{produto.nome}}</h1>
+                </ion-card-subtitle>
+                <h2>{{produto.detalhes}}</h2>
+                <ion-card-title>R${{produto.preco}}</ion-card-title>
+            </ion-card-header>
+        </ion-card-content>
+        <ion-button buttton expand="full">CLIQUE</ion-button>
+    </ion-card>
 
 
 
