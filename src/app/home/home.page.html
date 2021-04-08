@@ -10,7 +10,8 @@
 
     <ion-card *ngFor="let produto of produtos">
 
-        <ion-img src="../../assets/img/roupaFeminino.jpg"></ion-img>
+        <ion-img [src]="'http://localhost/projetos/apploja/'+ produto.img"></ion-img>
+        <!--colocar as informações das imagens no banco de dados-->
         <ion-card-content>
             <ion-card-header>
                 <ion-card-subtitle>
