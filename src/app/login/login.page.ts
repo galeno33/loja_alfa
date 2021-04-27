@@ -25,15 +25,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
 
-
-
   }
-
 
   async entrar(){
     if(this.Login == undefined || this.password == undefined){
 
-       const alert = await this.alert.create({
+        const alert = await this.alert.create({
           header: 'Atenção',
           message: 'Preencha todos os campos!!',
           buttons: ['OK']
@@ -42,18 +39,18 @@ export class LoginPage implements OnInit {
 
     }else{
 
-      this.http.get(this.url.getUrl()+ "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res:any) => res))
+      this.http.get(this.url.getUrl()+"login.php?Login="+this.Login+"&password="+this.password).pipe(map((res:any)=>res))
       .subscribe(
 
         data => {
 
-          if(data.msg.logado == "sim"){
+          if (data.msg.logado == 'sim'){
               this.nav.navigateBack('home');
           }else{
 
           }
         }
-      )
+      );
 
     }
   }

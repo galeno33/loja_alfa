@@ -20,7 +20,7 @@ export class HomePage {
   }
 
   listprodutos(){
-    this.http.get(this.Urlserve.getUrl()+"dados.php").pipe(map(res => res))
+    this.http.get(this.Urlserve.getUrl()+"dados.php").pipe(map((res:any) => res))
     .subscribe(
         listdado =>{
           this.produtos = listdado;
