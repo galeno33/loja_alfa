@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
-
 import { ProviderService } from '../provider/provider.service';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -41,7 +40,7 @@ export class LoginPage implements OnInit {
     }else{
 
 
-      this.http.get(this.url.getUrl() + "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res: any) => res))
+      this.http.get(this.url.getUrl() + "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res:any) => res))
       .subscribe(
 
         data => {
