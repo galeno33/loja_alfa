@@ -1,16 +1,11 @@
 <?php
 
-/*header("Access-Control-Allow-Origin: *");
-header('Content-Type: text/html; charset=utf-8');
-$host = "mysql:host=localhost;dbname=originais";
-$usuario = "mysql";
-$senha = "654321";*/
-
-    require 'conexao.php';//faz um requerimento ao arquivo de conexão
 
     if(isset($_GET["Login"]) || isset($_GET["password"]) ){
         if(!empty($_GET["Login"]) || !empty($_GET["password"]) ){
+
           //$conn = new PDO($host, $usuario, $senha);
+          require 'conexao.php';//faz um requerimento ao arquivo de conexão
 
           $Login = $_GET["Login"];
           $password = $_GET["password"];

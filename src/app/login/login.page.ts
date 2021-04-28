@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
   }
 
   async entrar(){
+
     if(this.Login == undefined || this.password == undefined){
 
         const alert = await this.alert.create({
@@ -39,7 +40,8 @@ export class LoginPage implements OnInit {
 
     }else{
 
-      this.http.get(this.url.getUrl()+"login.php?Login="+this.Login+"&password="+this.password).pipe(map((res:any)=>res))
+
+      this.http.get(this.url.getUrl() + "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res: any) => res))
       .subscribe(
 
         data => {

@@ -1,14 +1,9 @@
 <?php
-     /* header("Access-Control-Allow-Origin: *");
-      header('Content-Type: text/html; charset=utf-8');
-      $host = "mysql:host=localhost;dbname=originais";
-      $usuario = "mysql";
-      $senha = "654321";*/
 
-      require 'conexao.php';
 
       try{
 
+          require 'conexao.php';
 
            //$conn = new PDO($host, $usuario, $senha);
 
