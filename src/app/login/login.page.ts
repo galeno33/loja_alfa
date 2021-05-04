@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
     }else{
 
 
-      this.http.get(this.url.getUrl() + "login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res:any) => res))
+      this.http.get(this.url.getUrl() + "/php/login.php?Login=" + this.Login + "&password=" + this.password).pipe(map((res:any) => res))
       .subscribe(
 
         data => {
