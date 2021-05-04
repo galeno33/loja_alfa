@@ -21,7 +21,7 @@ export class HomePage {
 
   listprodutos(){
     // tslint:disable-next-line:quotemark
-    this.http.get(this.Urlserve.getUrl()+"/php/dados.php").pipe(map((res:any) => res))
+    this.http.get(this.Urlserve.getUrl()+"dados.php").pipe(map((res:any) => res))
     .subscribe(
         listdado =>{
           this.produtos = listdado;

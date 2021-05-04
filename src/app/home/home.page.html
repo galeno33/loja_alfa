@@ -10,9 +10,10 @@
 
     <ion-card *ngFor="let produto of produtos">
 
-        <!--VERIFICAR CONEXÃO DAS IMAGENS E BANCO DE DADOS-->
-        <ion-img [src]="'http://devinp-com-br.umbler.net'+ produto.img"></ion-img>
-        <!--colocar as informações das imagens no banco de dados-->
+
+        <ion-img [src]="'http://devinp.com.br/'+produto.img"></ion-img>
+        <!--a url não precisa apntar a pasta img pois já está no servidor online a pasta img-->
+
         <ion-card-content>
             <ion-card-header>
                 <ion-card-subtitle>

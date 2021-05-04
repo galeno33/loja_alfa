@@ -5,7 +5,6 @@
 
           require 'conexao.php';
 
-           //$conn = new PDO($host, $usuario, $senha);
 
         if(!$conn){
             echo "Não foi possivel conectar com Banco de Dados!";
