@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ProviderService} from '../provider/provider.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,9 @@ export class HomePage {
 
   constructor(
              public http: HttpClient,
-             public Urlserve: ProviderService
+             public Urlserve: ProviderService,
+             public nav: NavController,
+             
   ){
     this.listprodutos();
   }
@@ -27,6 +31,16 @@ export class HomePage {
           this.produtos = listdado;
         }
     );
+  }
+
+  carrinhoCompra(){
+    //console.log("carrinho de compras");
+      //this.nav.navigateForward('/carrinho');
+  }
+
+  comprar(){
+    //console.log("compra enviada ao carrinho");
+    
   }
 
 }

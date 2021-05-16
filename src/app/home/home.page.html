@@ -1,12 +1,13 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="tertiary">
         <ion-title>
             <strong>AppLoja</strong>
         </ion-title>
     </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content color="danger">
 
     <ion-card *ngFor="let produto of produtos">
 
@@ -23,9 +24,31 @@
                 <ion-card-title>R${{produto.preco}}</ion-card-title>
             </ion-card-header>
         </ion-card-content>
-        <ion-button buttton expand="full">CLIQUE</ion-button>
+        <ion-button buttton expand="full" (click)="comprar()">COMPRAR</ion-button>
     </ion-card>
 
+    <!--<ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button href="/carrinho">
+            <ion-icon name="cart-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>-->
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="menu-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+          <ion-fab-button href="/carrinho"><ion-icon name="cart-outline"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="bottom">
+          <ion-fab-button href="/login"><ion-icon name="exit-outline"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="start">
+          <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="end">
+          <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
 
 
 </ion-content>

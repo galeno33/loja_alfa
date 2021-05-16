@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <strong>
+        Carrinho
+      </strong>
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content color="danger">
+  
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button href="/home">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card *ngFor="let produto of produtos">
+    <ion-card-content>
+      <ion-card-header>
+          <ion-card-subtitle>
+              <h1>{{produto.nome}}</h1>
+          </ion-card-subtitle>
+          <h2>{{produto.detalhes}}</h2>
+          <ion-card-title>R${{produto.preco}}</ion-card-title>
+      </ion-card-header>
+  </ion-card-content>
+
+  </ion-card>
+  <h1>
+    <strong>
+      DEU CERTO!
+    </strong>
+  </h1>
+
+</ion-content>
