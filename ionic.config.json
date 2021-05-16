@@ -1,0 +1,7 @@
+{
+  "name": "apploja",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
